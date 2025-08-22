@@ -40,6 +40,10 @@ public class Book {
     @Column(columnDefinition = "TEXT")
     private String description;
     
+    @Size(max = 500, message = "PDF 파일 경로는 500자를 초과할 수 없습니다")
+    @Column(name = "pdf_file", length = 500)
+    private String pdfFile;
+    
     @Column(name = "created_at", nullable = false, updatable = false)
     private LocalDateTime createdAt;
     
@@ -144,6 +148,14 @@ public class Book {
     
     public void setUpdatedAt(LocalDateTime updatedAt) {
         this.updatedAt = updatedAt;
+    }
+    
+    public String getPdfFile() {
+        return pdfFile;
+    }
+    
+    public void setPdfFile(String pdfFile) {
+        this.pdfFile = pdfFile;
     }
 }
 

@@ -61,6 +61,7 @@ public class BookService {
         book.setPublishedAt(bookDto.getPublishedAt());
         book.setTags(bookDto.getTags());
         book.setDescription(bookDto.getDescription());
+        book.setPdfFile(bookDto.getPdfFile());
         
         Book updatedBook = bookRepository.save(book);
         return convertToDto(updatedBook);
@@ -83,6 +84,7 @@ public class BookService {
         dto.setPublishedAt(book.getPublishedAt());
         dto.setTags(book.getTags());
         dto.setDescription(book.getDescription());
+        dto.setPdfFile(book.getPdfFile());
         
         // 카테고리 ID를 카테고리 이름으로 변환 (간단한 매핑)
         dto.setCategory(getCategoryName(book.getCategoryId()));
@@ -99,6 +101,7 @@ public class BookService {
         book.setPublishedAt(dto.getPublishedAt());
         book.setTags(dto.getTags());
         book.setDescription(dto.getDescription());
+        book.setPdfFile(dto.getPdfFile());
         return book;
     }
     

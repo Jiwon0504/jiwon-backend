@@ -23,6 +23,7 @@ public class BookDto {
     private LocalDate publishedAt;
     private String tags;
     private String description;
+    private String pdfFile;
     
     // Constructors
     public BookDto() {}
@@ -69,4 +70,7 @@ public class BookDto {
     
     public String getDescription() { return description; }
     public void setDescription(String description) { this.description = description; }
+    
+    public String getPdfFile() { return pdfFile; }
+    public void setPdfFile(String pdfFile) { this.pdfFile = pdfFile; }
 }
